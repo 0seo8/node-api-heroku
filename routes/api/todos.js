@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
 
   let todos = {}
   try {
-    const todos = JSON.parse(fs.readFileSync(todosFile, 'utf8')) //
+    todos = JSON.parse(fs.readFileSync(todosFile, 'utf8'))
   } catch(err) {
     fs.mkdirSync(todosDir)
     fs.writeFileSync(todosFile, '{}')

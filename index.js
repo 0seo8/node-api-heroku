@@ -1,5 +1,12 @@
 const express = require('express')
 const cors = require('cors')
+const mongoose = require('mongoose')
+
+mongoose.connect('mongodb+srv://heropy:mJGPt8KyOl694OQ8@cluster0.kehet.mongodb.net/KDT-TEST?retryWrites=true&w=majority')
+const db = mongoose.connection
+db.once('open', () => {
+  console.log('MongoDB connected!')
+})
 
 global.appRoot = __dirname
 
