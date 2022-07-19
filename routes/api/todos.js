@@ -25,11 +25,11 @@ router.post('/', (req, res) => {
     fs.writeFileSync(todosFile, '{}')
   }
 
-  todos[nanoid()] = {title}
+  todos[nanoid()] = { title }
   fs.writeFileSync(todosFile, JSON.stringify(todos, null, 2))
 
   //fs.readdirSync(`${global.appRoot}/todos`)
-  res.status(200).json(todos)
+  res.status(200).json({title})
 })
 
 //update
